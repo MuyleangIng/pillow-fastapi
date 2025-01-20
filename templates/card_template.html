@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        p {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .sender, .recipient {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .message {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{ title }}</h1>
+        <p class="recipient"><strong>To:</strong> {{ recipient_email }}</p>
+        <p class="sender"><strong>From:</strong> {{ sender_email }}</p>
+        <div class="message">
+            <p>{{ message }}</p>
+        </div>
+        <div class="signature">
+            <p>Sincerely,</p>
+            <p>{{ sender_email.split('@')[0] }}</p>
+        </div>
+    </div>
+</body>
+</html>
