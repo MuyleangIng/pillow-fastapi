@@ -1,0 +1,36 @@
+{
+    "info": {
+        "_postman_id": "d118823c-227d-40a8-9140-0c671340475c",
+        "name": "test",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "http://localhost:8000/create-christmas-card/",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/create-christmas-card/",
+                    "path": [
+                        "create-christmas-card"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\r\n    \"to_email\": \"muyleanging@gmail.com\",\r\n    \"from_email\": \"test@gmail.com\",\r\n    \"font_size\": 40,\r\n    \"color\": \"navy\"\r\n}"
+                }
+            }
+        }
+    ]
+}
